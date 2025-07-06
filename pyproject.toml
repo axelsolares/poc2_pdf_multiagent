@@ -1,0 +1,23 @@
+[project]
+name = "poc2_pdf_multiagent"
+version = "0.1.0"
+description = "poc2_pdf_multiagent using crewAI"
+authors = [{ name = "Your Name", email = "you@example.com" }]
+requires-python = ">=3.10,<3.14"
+dependencies = [
+    "crewai[tools]>=0.140.0,<1.0.0"
+]
+
+[project.scripts]
+poc2_pdf_multiagent = "poc2_pdf_multiagent.main:run"
+run_crew = "poc2_pdf_multiagent.main:run"
+train = "poc2_pdf_multiagent.main:train"
+replay = "poc2_pdf_multiagent.main:replay"
+test = "poc2_pdf_multiagent.main:test"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.crewai]
+type = "crew"

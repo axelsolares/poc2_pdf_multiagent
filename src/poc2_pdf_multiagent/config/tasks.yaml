@@ -1,0 +1,37 @@
+pdf_rag_task:
+  description: >
+    Answer the question based on the PDF.
+    The rag agent will search through the PDF and return the most relevant information.
+    Your final answer MUST be clear and accurate, abse don the content of the PDF.
+
+    Here is the question: {input}
+  expected_output: >
+    Provide clear and accurate answer based on the PDF content.
+  agent: pdf_rag_agent
+
+pdf_summary_task:
+  description: >
+    Review the context you got and expand each topic into a full section for a report.
+    Make sure the report is detailed and contains any and all relevant information.
+  expected_output: >
+    A fully fledge reports with the mains topics, each with a full section of information.
+    Formatted as markdown without '```'
+  agent: pdf_summary_agent
+
+pdf_mcq_task:
+  description: >
+    Review the context you got and create 10 multiple-choice questions (MCQs)
+  expected_output: >
+    Format your response as follows:
+
+    Question 1:
+    [Question text]
+
+    A. [Option A]  
+    ...more options as needed...
+
+    Correct Answer: [Letter] - [Full text of correct option]  
+    Explanation: [Short explanation]
+
+    Repeat this pattern for each question until you generate 10 questions. If the content is too limited, generate as many as possible based on the available information.
+  agent: pdf_mcq_agent
